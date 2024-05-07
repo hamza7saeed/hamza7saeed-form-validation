@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="myPage2">
+    <div id="outPut">
+        <h3 style="font-size: x-large; color:aliceblue">Enter your vailed name</h3>
+        <input type="text" placeholder="Enter here" style="width: 50%; border-radius: 5px;" id="perName">
+        <button id="pressMe">Press me</button>
+    </div>
+    <div id="showMe">
+
+    </div>
+    <script>
+        let inputFullName = document.querySelector("#perName");
+        let pressBtn = document.querySelector("#pressMe").addEventListener("click",function(){
+
+        
+            <!-- visibility: visible; -->
+      
+
+        
+        let showOut= localStorage.getItem("data");
+        let showResult = JSON.parse(showOut)
+        console.log(showResult);
+        if (inputFullName.value === showResult["Full name"]){
+            
+        showMe.innerText = (`Full Name: ${showResult["Full name"]}
+        Contact number: ${showResult["Contact number"]}
+        Email: ${showResult["Email"]}
+        Discription: ${showResult["Discription"]}`)
+        } else
+        alert("Enter valid name");
+    })
+    </script>
+</body>
+</html>
